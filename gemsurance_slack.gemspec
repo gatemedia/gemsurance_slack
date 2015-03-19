@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.version       = GemsuranceSlack::VERSION
   spec.authors       = ["Ben Colon"]
   spec.email         = ["ben@colon.com.fr"]
-  spec.summary       = %q{Rake task to run Gemsurance and send warnings to Slack}
-  spec.description   = %q{Rake task to run Gemsurance and send warnings to Slack}
+  spec.summary       = %q{Rake task to run Gemsurance and send gems alerts/warnings to Slack}
+  spec.description   = %q{Rake task to run Gemsurance and send gems alerts/warnings to Slack}
   spec.homepage      = "https://github.com/gatemedia/gemsurance_slack"
   spec.license       = "MIT"
 
@@ -18,7 +18,8 @@ Gem::Specification.new do |spec|
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ["lib"]
 
-  spec.add_dependency("gemsurance", "0.3.0")
+  spec.add_dependency("gemsurance")
+  spec.add_dependency("slack-notifier", "1.1.0")
 
   spec.add_development_dependency "bundler", "~> 1.7"
   spec.add_development_dependency "rake", "~> 10.0"
