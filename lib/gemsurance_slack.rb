@@ -10,7 +10,7 @@ module GemsuranceSlack
   def self.check_and_notify
     abort "Error: environment variables SLACK_WEBHOOK_URL or SLACK_CHANNEL empty." unless initialize_slack_notifier
 
-    @gems_infos = Gemsurance::Runner.new.build_gems_infos
+    @gems_infos = Gemsurance::Runner.new.run.gem_infos
 
     vulnerables_notification
     outdated_notification
