@@ -67,6 +67,14 @@ If you're using the scheduling gem [Clockwork](https://github.com/tomykaira/cloc
 every(1.day, 'Check gems status', :at => '00:30') { GemsuranceSlack.check_and_notify }
 ```
 
+## Cron setup
+
+For a daily check at midnight by using Cron, edit your crontab file and add this line :
+
+```bash
+00 00 * * * cd /Users/you/projects/myrailsapp && /usr/local/bin/rake RAILS_ENV=production gemsurance_slack:check
+```
+
 ## Contributing
 
 1. Fork it ( https://github.com/gatemedia/gemsurance_slack/fork )
